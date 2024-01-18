@@ -24,14 +24,15 @@
   python source/bin/activate
   python -m pip install -r requirements.txt 
 ```
-3. Выполните миграции
+3. Укажите свои данные в env.example
+
+4. Выполните миграции
 ```bash
   ./manage.py makemigrations –dry-run
 (если происходит ошибка, то пропишите 
 'chmod u+rwx manage.py' и попробуйте выполнить миграции снова)
 ```
 
-4. Укажите свои данные в env.example
 5. Запустите проект
 ```bash
     python manage.py runserver
