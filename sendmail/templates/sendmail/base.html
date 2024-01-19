@@ -13,14 +13,14 @@
 
 <style>
     body {
-        background: url('static/images/background10.gif');
+        background: url('static/images/bkg.png');
         background-position: center;
         background-attachment: fixed;
         background-size; cover;
         font-family: 'Lato', sans-serif;
     }
     .card {
-background-color: rgba(255, 255, 255, 0.7);
+background-color: rgba(255, 255, 255, 0.1);
     }
     .container {
         padding: 50px 16px;
@@ -125,7 +125,7 @@ background-color: rgba(255, 255, 255, 0.7);
 
 .header {
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: rgba(255, 255, 255, 0.0);
   padding: 20px 10px;
 }
 
@@ -159,7 +159,7 @@ footer {
     position: left;
     bottom: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.0);
     padding: 0px 0;
 }
 
@@ -172,7 +172,7 @@ footer {
 
         {% if user.is_authenticated %}
         <a class="active" href="{% url 'users:logout' %}">Выйти</a>
-        <a href="#profile" >{{ user.email }}</a>
+        <a class="text text-muted" href="#profile" >{{ user.email }}</a>
         {% else %}
         <a href="{% url 'users:login' %}">Войти</a>
         <a href="{% url 'users:register' %}">Регистрация</a>
