@@ -56,7 +56,7 @@ class Mailing(models.Model):
     message = models.ForeignKey(Message, on_delete=models.CASCADE, verbose_name='сообщение', **NULLABLE)
     start_date = models.DateTimeField(default=timezone.now, verbose_name='время старта рассылки')
     next_date = models.DateTimeField(default=timezone.now, verbose_name='время следующей рассылки')
-    end_daate = models.DateTimeField(verbose_name='время окончания рассылки')
+    end_date = models.DateTimeField(verbose_name='время окончания рассылки')
     status = models.CharField(max_length=50, choices=STATUS_CHOICES, help_text='Выберите создана или Завершена')
     interval = models.CharField(default='разовая', max_length=50, choices=INTERVAL_CHOICES,
                                 verbose_name='периодичность')
@@ -69,7 +69,7 @@ class Mailing(models.Model):
     class Meta:
         verbose_name = 'рассылка'
         verbose_name_plural = 'рассылки'
-        ordering = ('start_date')
+        ordering = ('start_date',)
         permissions = [
             ('set_is_activated', 'Может отключать рассылку')
         ]

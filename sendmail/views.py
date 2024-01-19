@@ -135,7 +135,7 @@ class ClientListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self, *args, **kwargs):
         queryset = super().get_queryset(*args, **kwargs)
-        queryset = Client.object.filter(owner=self.request.user)
+        queryset = Client.objects.filter(owner=self.request.user)
 
         return queryset
 
