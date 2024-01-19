@@ -1,3 +1,23 @@
 from django.contrib import admin
 
-# Register your models here.
+from sendmail.models import Client, Message, Mailing, Logs
+
+
+@admin.register(Client)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ('full_name', 'email', 'comment',)
+
+
+@admin.register(Message)
+class MessageAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+
+
+@admin.register(Mailing)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = ('name', 'start_date', 'interval', 'status', 'owner')
+
+
+@admin.register(Logs)
+class LogsAdmin(admin.ModelAdmin):
+    list_display = ('mailing', 'last_mailing_time', 'status',)
